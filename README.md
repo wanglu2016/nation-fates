@@ -1,6 +1,10 @@
 # 国家命运 · 发展轨迹实验室
 
-**项目源码、真实数据与中文使用视频。**
+**在线体验：** https://wanglu2016.github.io/nation-fates/
+
+**使用讲解视频（5分05秒）：** https://wanglu2016.github.io/nation-fates/guide.html
+
+点开网页即可操作，无需登录、下载或安装。项目源码、真实数据与中文使用视频均保存在本仓库。
 
 [使用视频（MP4，约5分05秒）](nation-fates-guide.mp4) · [同步字幕（SRT）](nation-fates-guide.srt)
 
