@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101b24"><meta name="description" content="让国家成为一条轨迹。用世界银行真实数据，探索1990—2023年的发展、相似与分岔。"><title>国家命运 · 发展轨迹实验室</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="header"><a class="brand" href="./" aria-label="国家命运首页"><span class="mark">◌</span><span>国家命运<small>THE ATLAS OF POSSIBILITY</small></span></a><nav aria-label="主要功能"><button class="nav active" data-view="space">轨迹空间</button><button class="nav" data-view="twins">寻找相似</button><button class="nav" data-view="fork">命运分岔</button></nav><button id="methodBtn" class="quiet method-btn">资料与方法 <span>↗</span></button></header>
+<main>
+<section class="intro"><div><div class="eyebrow"><span class="live-dot"></span> 一个关于发展、相似与分岔的交互实验</div><h1>世界没有唯一的<span>前进方向。</span></h1><p>每个点，是一个国家的一年。每条线，是它走过的路。</p></div><div class="intro-stat"><strong id="countryCount">—</strong><span>个国家与经济体</span><i></i><strong>34</strong><span>年真实数据</span></div></section>
+<div class="workspace">
+<section class="scene-panel" aria-label="国家发展三维可视化">
+<div class="scene-top"><div class="segmented" id="projection"><button class="active" data-mode="axes">发展坐标</button><button data-mode="pca">六维投影 <span>↗</span></button></div><button id="resetCamera" class="icon-button" title="重置视角" aria-label="重置视角">⤾</button></div>
+<div class="scene-heading"><div id="sceneKicker" class="eyebrow">01 / THE DEVELOPMENT SPACE</div><h2 id="sceneTitle">把时间，变成路径</h2><p id="sceneSubtitle">拖动旋转 · 滚轮缩放 · 点击国家查看</p></div>
+<div id="canvasWrap"><canvas id="scene" aria-label="三维国家轨迹，亦可使用右侧国家列表查看数据" tabindex="0"></canvas><div id="tooltip" role="status"></div><div id="loading">正在展开世界的发展轨迹…</div></div>
+<div class="scene-bottom"><div id="legend" class="legend"></div><div class="scene-notice"><span id="spaceNote">横轴 收入 · 纵轴 寿命 · 纵深 城市化</span><button id="allToggle">展开全部轨迹</button></div></div>
+<div class="timebar"><button id="play" class="play" aria-label="播放时间">▶</button><div class="year-display"><b id="yearDisplay">2023</b><span>年</span></div><div class="slider-wrap"><input id="year" type="range" min="1990" max="2023" value="2023" step="1" aria-label="选择年份"><div class="ticks"><span>1990</span><span>2000</span><span>2010</span><span>2023</span></div></div><button id="trailToggle" class="trail-toggle active">轨迹 <span>开</span></button></div>
+</section>
+<aside class="sidebar">
+<div class="side-tabs"><button class="active" data-tab="profile">国家档案</button><button data-tab="compare">跨时比较</button></div>
+<div class="country-selector"><label for="country">正在观察</label><select id="country" aria-label="选择国家"></select></div>
+<div id="profile"></div>
+<div id="profileView"><div class="metric-grid" id="metrics"></div><div class="spark-section"><div class="section-label">一路走来 <select id="sparkMetric" aria-label="折线图指标"><option value="0">人均收入</option><option value="1">预期寿命</option><option value="2">城市化率</option><option value="3">生育率</option><option value="4">老龄化率</option><option value="5">工业占比</option></select></div><svg id="sparkline" viewBox="0 0 300 86" role="img" aria-label="所选指标1990至2023年趋势"></svg><div class="spark-labels"><span>1990</span><span>2023</span></div></div><div class="side-section"><div class="section-label">同一个时代，谁更相似？<span id="nearestYear">2023</span></div><div id="nearest"></div></div></div>
+<div id="compareView" hidden><p class="small-desc">把不同年代放在一起。用六个维度，寻找另一个时空的相似状态。</p><div class="compare-picker"><select id="compareCountry" aria-label="比较国家"></select><select id="compareYear" aria-label="比较年份"></select></div><div id="comparison"></div></div>
+<button id="findTwin" class="primary">寻找另一个年代的自己 <span>↗</span></button>
+</aside>
+</div>
+<section class="discovery"><div class="section-heading"><div><div class="eyebrow">CHOOSE A QUESTION</div><h2>从一个好问题出发</h2></div><span>选一个切面，重新看世界</span></div><div class="story-grid">
+<button class="story active" data-story="east"><span class="story-num">01 / EAST ASIA</span><h3>东亚，走过同一条路吗？</h3><p>中国、日本、韩国与越南。相近的方向，各自的节奏。</p><div class="story-footer"><span class="mini-lines">╱ ╱ ╱</span><span>观察东亚轨迹 ↗</span></div></button>
+<button class="story" data-story="latin"><span class="story-num">02 / LATIN AMERICA</span><h3>收入会停下，生活也会吗？</h3><p>巴西、墨西哥、阿根廷与智利。把收入和寿命放在一起看。</p><div class="story-footer"><span class="mini-lines">∿ ∿ ∿</span><span>观察拉美轨迹 ↗</span></div></button>
+<button class="story" data-story="population"><span class="story-num">03 / DEMOGRAPHY</span><h3>富裕与变老，谁先抵达？</h3><p>切换人口视角，比较日本、中国、印度与尼日利亚。</p><div class="story-footer"><span class="mini-lines">⌁ ⌁ ⌁</span><span>探索人口转弯 ↗</span></div></button>
+</div></section>
+<section id="analysisSection" class="analysis-section" hidden></section>
+<footer><span>国家命运 <i>·</i> 发展轨迹实验室</span><span>数据：世界银行 WDI <i>·</i> 1990—2023 <i>·</i> <a href="guide.html">五分钟使用视频 ↗</a> <i>·</i> <button id="footerMethod">让数据说清自己的边界 ↗</button></span></footer>
+</main>
+<dialog id="methodDialog"><button class="dialog-close" aria-label="关闭">×</button><div class="eyebrow">READING THE ATLAS</div><h2>资料、方法与边界</h2><div id="methodContent"></div></dialog>
+<dialog id="twinDialog"><button class="dialog-close" aria-label="关闭">×</button><div class="eyebrow">ANOTHER TIME, A SIMILAR STATE</div><h2 id="twinTitle">另一个年代的自己</h2><p id="twinIntro"></p><div id="twinList"></div><p class="dialog-footnote">接近只描述这六项指标。它不包含制度、文化、分配状况，也不能预告未来。</p></dialog>
+<div id="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>
